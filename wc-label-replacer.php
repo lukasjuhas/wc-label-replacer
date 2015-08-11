@@ -1,12 +1,12 @@
 <?php
 /**
- * Plugin Name: WooCommerce Label Replacer
- * Plugin URI: https://github.com/lukasjuhas/woocommerce-label-replacer
+ * Plugin Name: WC Label Replacer
+ * Plugin URI: https://github.com/lukasjuhas/wc-label-replacer
  * Description: Replace default "WooCommerce" Label with simple "Shop"
  * Version: 1.0
  * Author: Lukas Juhas
  * Author URI: http://lukasjuhas.com/
- * Text Domain: woocommerce-label-replacer
+ * Text Domain: wc-label-replacer
  * License: GPL2
  */
 
@@ -29,7 +29,7 @@
 # Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-class WooCommerce_Label_Replacer {
+class WC_Label_Replacer {
   function __construct() {
     // make sure WooCommerce is enabled
     if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
@@ -42,7 +42,7 @@ class WooCommerce_Label_Replacer {
    * @method  menu
    * @return  ''
    * @author Lukas Juhas
-   * @package woocommerce-shop-label
+   * @package wc-label-replacer
    * @version 1.0
    * @date    2015-08-11
    */
@@ -62,7 +62,7 @@ class WooCommerce_Label_Replacer {
    * @method  menu
    * @return  styling
    * @author Lukas Juhas
-   * @package woocommerce-shop-label
+   * @package wc-label-replacer
    * @version 1.0
    * @date    2015-08-11
    */
@@ -79,4 +79,4 @@ class WooCommerce_Label_Replacer {
 
 }
 # init
-$WooCommerce_Label_Replacer = new WooCommerce_Label_Replacer();
+$WC_Label_Replacer = new WC_Label_Replacer();

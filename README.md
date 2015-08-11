@@ -1,5 +1,5 @@
-WooCommerce Label Replacer
-==========================
+WC Label Replacer
+=================
 
 Replace default "WooCommerce" Label with simple "Shop"
 
@@ -25,7 +25,7 @@ Bugs and pull requests are welcomed.
 
 ## Installation
 
-1. Upload `woocommerce-label-replacer` to the `/wp-content/plugins/` directory
+1. Upload `wc-label-replacer` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
 ## Changelog

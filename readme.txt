@@ -1,4 +1,4 @@
-=== WC Label Replacer ===
+=== WooCommerce Label Replacer ===
 Contributors: LukasNeptun
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2XPA4CKT836FJ
 Tags: woocommerce, woocommerce label, shop woocommerce, shop, shop label, change label, change woocommerce label, woocommerce modify label, modify woocommerce, lukas juhas
@@ -14,7 +14,7 @@ Replace default "WooCommerce" Label with simple "Shop"
 
 Replace default "WooCommerce" Label with simple "Shop". Just activate plugin. No settings page, no adds, no useless junk.
 
-= Main Features =
+= Features =
 * Replaces "WooCommerce" with "Shop" Label in the WooCommerce main menu in the wp-admin
 * Replaces WooCommerce logo with Tag icon from wordpress dashicons
 

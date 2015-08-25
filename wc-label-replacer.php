@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: WC Label Replacer
+ * Plugin Name: WooCommerce Label Replacer
  * Plugin URI: https://github.com/lukasjuhas/wc-label-replacer
  * Description: Replace default "WooCommerce" Label with simple "Shop"
  * Version: 1.0

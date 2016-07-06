@@ -3,14 +3,14 @@
  * Plugin Name: WooCommerce Label Replacer
  * Plugin URI: https://github.com/lukasjuhas/wc-label-replacer
  * Description: Replace default "WooCommerce" Label with simple "Shop"
- * Version: 1.0
+ * Version: 1.1
  * Author: Lukas Juhas
  * Author URI: http://lukasjuhas.com/
  * Text Domain: wc-label-replacer
  * License: GPL2
  */
 
-/*  Copyright 2014-2015  Lukas Juhas  (email : hello@lukasjuhas.com)
+/*  Copyright 2014-2016  Lukas Juhas
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as
@@ -27,16 +27,20 @@
 */
 
 # Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) exit;
+if (! defined('ABSPATH')) {
+    exit;
+}
 
-class WC_Label_Replacer {
-  function __construct() {
-    // make sure WooCommerce is enabled
-    if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-      add_action( 'admin_menu', array($this, 'menu'), 100 );
-      add_action( 'admin_head', array($this, 'styling') );
+class WC_Label_Replacer
+{
+    public function __construct()
+    {
+        // make sure WooCommerce is enabled
+        if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_option('active_plugins')))) {
+            add_action('admin_menu', array($this, 'menu'), 100);
+            add_action('admin_head', array($this, 'styling'));
+        }
     }
-  }
   /**
    * Hook on to menu and change the label
    * @method  menu
@@ -46,15 +50,18 @@ class WC_Label_Replacer {
    * @version 1.0
    * @date    2015-08-11
    */
-  function menu() {
-  	global $menu;
-  	foreach($menu as $i => $item){
-  		if('woocommerce' == $item[2]){
-  			$index = $i;
-  			break;
-  		}
-  	}
-  	$menu[$index][0] = 'Shop';
+  public function menu()
+  {
+      global $menu;
+      $order_count = wc_processing_order_count();
+
+      foreach ($menu as $i => $item) {
+          if ('woocommerce' == $item[2]) {
+              $index = $i;
+              break;
+          }
+      }
+      $menu[$index][0] = 'Shop <span class="awaiting-mod update-plugins count-' . $order_count . '"><span class="processing-count">' . number_format_i18n($order_count) . '</span></span>';
   }
 
   /**
@@ -66,8 +73,9 @@ class WC_Label_Replacer {
    * @version 1.0
    * @date    2015-08-11
    */
-  function styling() {
-    echo '
+  public function styling()
+  {
+      echo '
       <style>
       #adminmenuwrap #adminmenu #toplevel_page_woocommerce .menu-icon-generic div.wp-menu-image::before {
         font-family: dashicons !important;
@@ -76,7 +84,6 @@ class WC_Label_Replacer {
       </style>
     ';
   }
-
 }
 # init
 $WC_Label_Replacer = new WC_Label_Replacer();

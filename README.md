@@ -21,7 +21,7 @@ Bugs and pull requests are welcomed.
 ## Wordpress Info
 
 * Requires at least (not tested below): 3.5.0
-* Tested up to: 4.5.3
+* Tested up to: 4.8.2
 
 ## Installation
 
@@ -29,6 +29,11 @@ Bugs and pull requests are welcomed.
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
 ## Changelog
+### 1.2
+* Verify compatibility
+* Tidy up code
+* Update readmes
+
 ### 1.1
 * Add processing order count indicator
 * Tidy up code

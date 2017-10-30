@@ -1,10 +1,10 @@
 === WooCommerce Label Replacer ===
 Contributors: LukasNeptun
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2XPA4CKT836FJ
-Tags: woocommerce, woocommerce label, shop woocommerce, shop, shop label, change label, change woocommerce label, woocommerce modify label, modify woocommerce, lukas juhas
+Tags: woocommerce, label, shop
 Requires at least: 3.5.0
-Tested up to: 4.5.3
-Stable tag: 1.1
+Tested up to: 4.8.2
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,6 +39,11 @@ None yet.
 1. Example
 
 == Changelog ==
+= 1.2 =
+* Verify compatibility
+* Tidy up code
+* Update readmes
+
 = 1.1 =
 * Add processing order count indicator
 * Tidy up code

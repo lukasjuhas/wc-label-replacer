@@ -1,10 +1,10 @@
 === WooCommerce Label Replacer ===
 Contributors: LukasNeptun
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2XPA4CKT836FJ
-Tags: woocommerce, label, shop
+Tags: woocommerce, label, shop, replace, name, modify
 Requires at least: 3.5.0
-Tested up to: 4.8.2
-Stable tag: 1.2
+Tested up to: 4.9
+Stable tag: 1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,9 +22,6 @@ Replace default "WooCommerce" Label with simple "Shop". Just activate plugin. No
 > <strong>Development on GitHub</strong><br>
 > The development of WooCommerce Label Replacer [takes place on GitHub](https://github.com/lukasjuhas/wc-label-replacer). Bugs and pull requests are welcomed there.
 
-<strong>Development continues and over the time will bring many features and improvements. Please don't hesitate to submit suggestions or feedback either through github, support plugin page or contact link listed in the plugin.</strong>
-
-
 == Installation ==
 
 1. Upload `wc-label-replacer` to the `/wp-content/plugins/` directory
@@ -37,8 +34,17 @@ None yet.
 == Screenshots ==
 
 1. Example
+2. Example showing indicator of pending orders
+3. Original -> Plugin example
 
 == Changelog ==
+= 1.3 =
+* Code overhaul
+* New icons
+* New banners
+* Add new screenshots
+* Update readmes
+
 = 1.2 =
 * Verify compatibility
 * Tidy up code

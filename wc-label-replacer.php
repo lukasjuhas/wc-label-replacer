@@ -2,8 +2,8 @@
 /**
  * Plugin Name: WooCommerce Label Replacer
  * Plugin URI: https://github.com/lukasjuhas/wc-label-replacer
- * Description: Replace default "WooCommerce" Label with simple "Shop" with simplified icon.
- * Version: 1.2
+ * Description: Replace default "WooCommerce" Label with simple "Shop" and simplified icon.
+ * Version: 1.3
  * Author: Lukas Juhas
  * Author URI: http://itsluk.as
  * Text Domain: wc-label-replacer
@@ -26,11 +26,15 @@
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-# Exit if accessed directly
-if (! defined('ABSPATH')) {
+// Exit if accessed directly
+if (!defined('ABSPATH')) {
     exit;
 }
 
+/**
+ * WooCommerce Label Replacer
+ *
+ */
 class WC_Label_Replacer
 {
     /**
@@ -40,8 +44,8 @@ class WC_Label_Replacer
     {
         // make sure WooCommerce is enabled
         if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_option('active_plugins')))) {
-            add_action('admin_menu', array($this, 'menu'), 100);
-            add_action('admin_head', array($this, 'styling'));
+            add_action('admin_menu', [$this, 'menu'], 100);
+            add_action('admin_head', [$this, 'styles']);
         }
     }
 
@@ -57,35 +61,37 @@ class WC_Label_Replacer
         $order_count = wc_processing_order_count();
 
         foreach ($menu as $i => $item) {
-            if ('woocommerce' == $item[2]) {
+            if ($item[2] == 'woocommerce') {
                 $index = $i;
                 break;
             }
         }
-        $menu[$index][0] = 'Shop <span class="awaiting-mod update-plugins count-' .
-            $order_count .
-            '"><span class="processing-count">' .
-            number_format_i18n($order_count) .
-            '</span></span>';
+
+        $menu[$index][0] = sprintf(
+            'Shop <span class="awaiting-mod update-plugins count-%s"><span class="processing-count">%s</span></span>',
+            $order_count,
+            number_format_i18n($order_count)
+        );
     }
 
     /**
-     * Add styling to admin header to force new icon for woocommerce
+     * Add styles to admin header to force new icon for woocommerce
      *
      * @since 1.0
      * @return void
      */
-    public function styling()
+    public function styles()
     {
         echo '
             <style>
-            #adminmenuwrap #adminmenu #toplevel_page_woocommerce .menu-icon-generic div.wp-menu-image::before {
-                font-family: dashicons !important;
-                content: "\f323" !important;
-            }
+                #adminmenuwrap #adminmenu #toplevel_page_woocommerce .menu-icon-generic div.wp-menu-image::before {
+                    font-family: dashicons !important;
+                    content: "\f323" !important;
+                }
             </style>
         ';
     }
 }
-# init
+
+// init
 $WC_Label_Replacer = new WC_Label_Replacer();
